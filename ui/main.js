@@ -2,13 +2,12 @@ var button=document.getElementById("counter");
    
 button.onclick=function()
 {
-
 var request=new XMLHttpRequest();
 request.onreadystatechange=function()
 {
-    if(request.readyState==XMLHttpRequest.DONE)
+    if(request.readyState===XMLHttpRequest.DONE)
     {
-        if(request.status==200)
+        if(request.status===200)
         {
             var counter=request.responseText;
             var span=document.getElementById("count");
@@ -17,7 +16,7 @@ request.onreadystatechange=function()
         }
     }
 };
- request.open('Get','http://cdeepkiran14.imad.hasura-app.io',true);
+ request.open('GET','http://cdeepkiran14.imad.hasura-app.io',true);
  request.send('null');
     
 };
